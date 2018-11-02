@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="사업단">
+        <item>장학</item>
+        <item>학사</item>
+        <item>취업</item>
+    </string-array>
+</resources>
