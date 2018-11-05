@@ -9,6 +9,7 @@ package com.computabuddy.kmuhomepage.kmuhomepageapp;
 //------------------------------------------------------------------------------------------------//
 //
 //------------------------------------------------------------------------------------------------//
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 //------------------------------------------------------------------------------------------------//
 //
@@ -30,11 +32,13 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     //--------------------------------------------------------------------------------------------//
     //
     //--------------------------------------------------------------------------------------------//
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avt_kmu_page);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,12 +61,45 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        // 학교 공지 페이지로 전환.
+//         1 Button btnSchool = (Button)findViewById(R.id.Btn_School);
+
+        findViewById(R.id.Btn_School).setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.Btn_Major).setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.Btn_Home).setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
     //--------------------------------------------------------------------------------------------//
     //
     //--------------------------------------------------------------------------------------------//
     @Override
-    public void onBackPressed()
+    public void onBackPressed() //액티비티 뒤에서 계속 돌아가는거
     {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START))
@@ -78,7 +115,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     //
     //--------------------------------------------------------------------------------------------//
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public boolean onCreateOptionsMenu(Menu menu) //왼쪽 옵션메뉴 생성되는거
     {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.avt_menu, menu);
@@ -88,7 +125,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     //
     //--------------------------------------------------------------------------------------------//
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    public boolean onOptionsItemSelected(MenuItem item) // 오른쪽 옵션에 있는 카테고리선택
     {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -108,7 +145,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     //--------------------------------------------------------------------------------------------//
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item)
+    public boolean onNavigationItemSelected(MenuItem item) // 좌측에 있는 카테고리 선택.
     {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
