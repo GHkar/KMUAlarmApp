@@ -34,7 +34,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avt_menu);
+        setContentView(R.layout.activity_avt_kmu_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

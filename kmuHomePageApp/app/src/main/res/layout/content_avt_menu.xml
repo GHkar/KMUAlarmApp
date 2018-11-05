@@ -5,50 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AvtMenu"
+    tools:context=".AvtKmuPage"
     tools:showIn="@layout/app_bar_avt_menu">
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/Btn_Home"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="홈" />
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/Btn_School"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="학교" />
+            <Button
+                android:id="@+id/Btn_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="홈" />
 
-        <Button
-            android:id="@+id/Btn_SwBuiseness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="사업단" />
+            <Button
+                android:id="@+id/Btn_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="학교" />
 
-        <Button
-            android:id="@+id/Btn_Major"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="학과" />
+            <Button
+                android:id="@+id/Btn_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="사업단" />
 
-        <Button
-            android:id="@+id/Btn_Schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="스케쥴" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/Btn_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전공" />
 
+            <Button
+                android:id="@+id/Btn_scehdule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="일정" />
+
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>
