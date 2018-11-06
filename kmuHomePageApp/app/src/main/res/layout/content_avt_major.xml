@@ -21,7 +21,7 @@
 
 
             <Button
-                android:id="@+id/btn_write"
+                android:id="@+id/btnWrite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="글쓰기 추가" />
@@ -35,35 +35,35 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/Btn_home"
+                android:id="@+id/btnHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="홈" />
 
             <Button
-                android:id="@+id/Btn_school"
+                android:id="@+id/btnSchool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="학교" />
 
             <Button
-                android:id="@+id/Btn_business"
+                android:id="@+id/btnBusiness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="사업단" />
 
             <Button
-                android:id="@+id/Btn_major"
+                android:id="@+id/btnMajor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="전공" />
 
             <Button
-                android:id="@+id/Btn_scehdule"
+                android:id="@+id/btnScehdule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

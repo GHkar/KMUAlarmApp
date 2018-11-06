@@ -9,6 +9,7 @@ package com.computabuddy.kmuhomepage.kmuhomepageapp;
 //------------------------------------------------------------------------------------------------//
 //
 //------------------------------------------------------------------------------------------------//
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,12 +22,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Switch;
 
 //------------------------------------------------------------------------------------------------//
 //
 //------------------------------------------------------------------------------------------------//
 public class AvtMajor extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
 {
     //--------------------------------------------------------------------------------------------//
     //
@@ -49,7 +52,49 @@ public class AvtMajor extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        initControl();
 
+    }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+    protected void initControl()
+    {
+        findViewById(R.id.btnMajor).setOnClickListener(this);
+        findViewById(R.id.btnHome).setOnClickListener(this);
+        findViewById(R.id.btnSchool).setOnClickListener(this);
+    }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+    @Override
+    public void onClick(View view)
+    {
+        switch(view.getId())
+        {
+            case R.id.btnMajor:
+            {
+                Intent intent = new Intent(AvtMajor.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            case R.id.btnHome:
+            {
+                Intent intent = new Intent(AvtMajor.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            case R.id.btnSchool:
+            {
+                Intent intent = new Intent(AvtMajor.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+
+        }
     }
     //--------------------------------------------------------------------------------------------//
     //
