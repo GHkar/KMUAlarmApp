@@ -1,0 +1,23 @@
+img {border: 0px;}
+
+body {margin: 10px; padding: 0px; font-family: "NanumgothicWeb", nanumgothic, nanumgothicOTF, Arial, Helvetica, sans-serif; color: #000000; font-size: 15px; background-color: #FFFFFF; border-collapse: collapse;}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		td, th {
+			font-size: 10pt;
+			border: 1px solid #98bf21;
+			height: 25px;
+			font-size:70%;
+		}
+		th {
+			background-color:#EEEEEE;
+			color:#00000;
+		}
+		tr.alt td {
+			color:#000000;
+			background-color:#EAF2D3;
+		}

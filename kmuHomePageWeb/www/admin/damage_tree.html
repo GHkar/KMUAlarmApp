@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>Ryan</title>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="./js/jquery/jquery-ui.css">
+<script src="./js/jquery/jquery.min.js"></script>
+<script src="./js/jquery/jquery-ui.min.js"></script>
+<script src="./js/!ryan.js"></script>
+<link rel="stylesheet" href="./css/!ryan.css">
+<script src="./js/common.js"></script>
+<link rel="stylesheet" href="./css/common.css">
+<script src="./js/sheetjs.all.min.js"></script>
+<script src="./js/excelplus-2.4.min.js"></script>
+<script src="./js/simple-excel.js"></script>
+<script>
+	var excelTable = "damage_tree";
+	var tableName = "피해목 조사";
+</script>
+<style>
+	#header{min-width:1725px;}
+	#title-area{min-width:1725px;max-width:1925px;}
+	#table{min-width:1725px;max-width:1925px;}
+</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="contents">
+		<div id="title-area" class="reset margin-all-auto">
+			<div id="title"></div>
+			<div id="excel" class="right">
+				<form id="excel-form" class="reset po-a" method="POST" ENCTYPE="multipart/form-data">
+					<a class="none" href="/admin/form/damage_tree.xlsx" target="_blank">양식 다운로드</a>
+					<input type="button" class="excel-download excel-button reset button pointer" value="양식 다운로드">
+					<input type="file" id="excel-select" name="excelFile" class="none" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+					<input type="button" id="excel-upload" class="excel-button reset button pointer" value="엑셀업로드(DB)">
+					<input type="button" id="excel-download" class="excel-button reset button pointer" value="엑셀저장(현재)">
+					<a id="excel-download-link" class="none" href="#" download="">&nbsp;</a>
+					<input type="button" id="all-download" class="excel-button reset button pointer" value="엑셀저장(전체)">
+					<a id="all-download-link" class="none" href="#" download="">&nbsp;</a>
+				</form>
+			</div>
+		</div>
+		<table id="table" class="table reset margin-all-auto">
+			<tr id="table-header">
+				<!--<td width="50"><input class="check-all" type="checkbox"></td>-->
+				<td width="100">식별번호</td>
+				<td width="100">등록자</td>
+				<td width="175">등록업체</td>
+				<td width="125">등록일자</td>
+				<td width="100">위도/경도</td>
+				<td width="100">
+					<select class="where-select" data-type="cvt_type">
+						<option value="" {?sc.cvt_type==""}selected{/}>{?sc.cvt_type==""}타원체/원점{:}전체{/}</option>
+						<option value="WGS84 TM" {?sc.cvt_type=="WGS84 TM"}selected{/}>WGS84 TM</option>
+						<option value="GRS80 TM" {?sc.cvt_type=="GRS80 TM"}selected{/}>GRS80 TM</option>
+						<option value="BESSEL TM" {?sc.cvt_type=="BESSEL TM"}selected{/}>BESSEL TM</option>
+					</select>
+				</td>
+				<td width="125">X/Y</td>
+				<td width="75">
+					<select class="where-select" data-type="tree">
+						<option class="where-base" value="" {?sc.tree==""}selected{/}>{?sc.tree==""}수종{:}전체{/}</option>
+						<option value="소나무" {?sc.tree=="소나무"}selected{/}>소나무</option>
+						<option value="잣나무" {?sc.tree=="잣나무"}selected{/}>잣나무</option>
+						<option value="해송" {?sc.tree=="해송"}selected{/}>해송</option>
+					</select>
+				</td>
+				<td width="100">
+					<select class="where-select" data-type="damage">
+						<option value="" {?sc.damage==""}selected{/}>{?sc.damage==""}피해종류{:}전체{/}</option>
+						<option value="피해고사" {?sc.damage=="피해고사"}selected{/}>피해고사</option>
+						<option value="자연고사" {?sc.damage=="자연고사"}selected{/}>자연고사</option>
+						<option value="의심목" {?sc.damage=="의심목"}selected{/}>의심목</option>
+						<option value="풍도목" {?sc.damage=="풍도목"}selected{/}>풍도목</option>
+						<option value="전도목" {?sc.damage=="전도목"}selected{/}>전도목</option>
+						<option value="훼손목" {?sc.damage=="훼손목"}selected{/}>훼손목</option>
+						<option value="기타" {?sc.damage=="기타"}selected{/}>기타</option>
+					</select>
+				</td>
+				<td width="100">흉고직경</td>
+				<td width="100">근원직경</td>
+				<td width="100">소경급4cm</td>
+				<td width="100">소경급2cm</td>
+				<td width="75">
+					<select class="where-select" data-type="danger">
+						<option value="" {?sc.danger==""}selected{/}>{?sc.danger==""}위험목{:}전체{/}</option>
+						<option value="예" {?sc.danger=="예"}selected{/}>예</option>
+						<option value="아니오" {?sc.danger=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="250">특이사항</td>
+				
+			</tr>
+			{@damage_tree}
+			<tr>
+				<!--<td><input class="select-check" type="checkbox" data-seq="{.seq}"></td>-->
+				<td>{.f_identify}</td>
+				<td>{.reg_name}</td>
+				<td>{.reg_company}</td>
+				<td>{.reg_date}</td>
+				<td>{.reg_x}<br>{.reg_y}</td>
+				<td>{.cvt_type}<br>{.cvt_type2}</td>
+				<td>{.cvt_x}<br>{.cvt_y}</td>
+				<td>{.tree}</td>
+				<td>{.damage}</td>
+				<td>
+					{?.dbh==0&&.dbh_detail1==0&&.dbh_detail2==0}-{:}
+					{?.dbh==0}-{:}{.dbh}cm{/}<br>
+					({?.dbh_detail1==0}X{:}{.dbh_detail1}cm{/} / {?.dbh_detail2==0}X{:}{.dbh_detail2}cm{/}){/}
+				</td>
+				<td>
+					{?.rcc==0&&.rcc_detail1==0&&.rcc_detail2==0}-{:}
+					{?.rcc==0}-{:}{.rcc}cm{/}<br>
+					({?.rcc_detail1==0}X{:}{.rcc_detail1}cm{/} / {?.rcc_detail2==0}X{:}{.rcc_detail2}cm{/}){/}
+				</td>
+				<td>{?.stems_4cm==0}-{:}{.stems_4cm}개{/}</td>
+				<td>{?.stems_2cm==0}-{:}{.stems_2cm}개{/}</td>
+				<td>{.danger}</td>
+				<td>{?.report==""}-{:}{.report}{/}</td>
+			</tr>
+			{:}
+			<tr><td colspan="15">조회된 데이터가 없습니다.</td></tr>
+			{/}
+		</table>
+		{sc.paging}
+	</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>Ryan</title>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="./js/jquery/jquery-ui.css">
+<script src="./js/jquery/jquery.min.js"></script>
+<script src="./js/jquery/jquery-ui.min.js"></script>
+<script src="./js/!ryan.js"></script>
+<link rel="stylesheet" href="./css/!ryan.css">
+<script src="./js/common.js"></script>
+<link rel="stylesheet" href="./css/common.css">
+<script src="./js/sheetjs.all.min.js"></script>
+<script src="./js/excelplus-2.4.min.js"></script>
+<script src="./js/simple-excel.js"></script>
+<script>
+	var excelTable = "fumi_dummy";
+	var tableName = "훈증무더기입력 및 감리확인";
+</script>
+<style>
+	#header{min-width:2350px;}
+	#title-area{min-width:2350px;max-width:2550px;}
+	#table{min-width:2350px;max-width:2550px;}
+</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="contents">
+		<div id="title-area" class="reset margin-all-auto">
+			<div id="title"></div>
+			<div id="excel" class="right">
+				<form id="excel-form" class="reset po-a" method="POST" ENCTYPE="multipart/form-data">
+					<a class="none" href="/admin/form/fumi_dummy.xlsx" target="_blank">양식 다운로드</a>
+					<input type="button" class="excel-download excel-button reset button pointer" value="양식 다운로드">
+					<input type="file" id="excel-select" name="excelFile" class="none" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+					<input type="button" id="excel-upload" class="excel-button reset button pointer" value="엑셀업로드(DB)">
+					<input type="button" id="excel-download" class="excel-button reset button pointer" value="엑셀저장(현재)">
+					<a id="excel-download-link" class="none" href="#" download="">&nbsp;</a>
+					<input type="button" id="all-download" class="excel-button reset button pointer" value="엑셀저장(전체)">
+					<a id="all-download-link" class="none" href="#" download="">&nbsp;</a>
+				</form>
+			</div>
+		</div>
+		<table id="table" class="table reset margin-all-auto">
+			<tr id="table-header">
+				<!--<td width="50"><input class="check-all" type="checkbox"></td>-->
+				<td width="100">식별번호</td>
+				<td width="100">등록자</td>
+				<td width="175">등록업체</td>
+				<td width="125">등록일자</td>
+				<td width="100">경위도</td>
+				<td width="100">
+					<select class="where-select" data-type="cvt_type">
+						<option value="" {?sc.cvt_type==""}selected{/}>{?sc.cvt_type==""}타원체/원점{:}전체{/}</option>
+						<option value="WGS84 TM" {?sc.cvt_type=="WGS84 TM"}selected{/}>WGS84 TM</option>
+						<option value="GRS80 TM" {?sc.cvt_type=="GRS80 TM"}selected{/}>GRS80 TM</option>
+						<option value="BESSEL TM" {?sc.cvt_type=="BESSEL TM"}selected{/}>BESSEL TM</option>
+					</select>
+				</td>
+				<td width="125">X/Y</td>
+				<td width="100">
+					<select class="where-select" data-type="standard">
+						<option value="" {?sc.standard==""}selected{/}>{?sc.standard==""}규격{:}전체{/}</option>
+						<option value="1" {?sc.standard=="1"}selected{/}>1m</option>
+						<option value="2" {?sc.standard=="2"}selected{/}>2m</option>
+					</select>
+				</td>
+				<td width="100">
+					<select class="where-select" data-type="drug">
+						<option value="" {?sc.drug==""}selected{/}>{?sc.drug==""}약제명{:}전체{/}</option>
+						<option value="팔라딘" {?sc.drug=="팔라딘"}selected{/}>팔라딘</option>
+						<option value="쏘일킹" {?sc.drug=="쏘일킹"}selected{/}>쏘일킹</option>
+						<option value="킬퍼" {?sc.drug=="킬퍼"}selected{/}>킬퍼</option>
+						
+					</select>
+				</td>
+				<td width="100">
+					<select class="where-select" data-type="amount">
+						<option value="" {?sc.amount==""}selected{/}>{?sc.amount==""}사용약량{:}전체{/}</option>
+						<option value="1" {?sc.amount=="1"}selected{/}>1개</option>
+						<option value="2" {?sc.amount=="2"}selected{/}>2개</option>
+					</select>
+				</td>
+				<td width="250">특이사항</td>
+				<td width="125">
+					<select class="where-select" data-type="fumi_confirm">
+						<option value="" {?sc.fumi_confirm==""}selected{/}>{?sc.fumi_confirm==""}훈증상태확인{:}전체{/}</option>
+						<option value="예" {?sc.fumi_confirm=="예"}selected{/}>예</option>
+						<option value="아니오" {?sc.fumi_confirm=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="125">
+					<select class="where-select" data-type="fumi_photo">
+						<option value="" {?sc.fumi_photo==""}selected{/}>{?sc.fumi_photo==""}사진촬영확인{:}전체{/}</option>
+						<option value="예" {?sc.fumi_photo=="예"}selected{/}>예</option>
+						<option value="아니오" {?sc.fumi_photo=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="100">
+					<select class="where-select" data-type="cfm_drug">
+						<option value="" {?sc.cfm_drug==""}selected{/}>{?sc.cfm_drug==""}약제확인{:}전체{/}</option>
+						<option value="1" {?sc.cfm_drug=="예"}selected{/}>예</option>
+						<option value="2" {?sc.cfm_drug=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="125">
+					<select class="where-select" data-type="cfm_fumi">
+						<option value="" {?sc.cfm_fumi==""}selected{/}>{?sc.cfm_fumi==""}감리훈증확인{:}전체{/}</option>
+						<option value="1" {?sc.cfm_fumi=="예"}selected{/}>예</option>
+						<option value="2" {?sc.cfm_fumi=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="125">
+					<select class="where-select" data-type="cfm_photo">
+						<option value="" {?sc.cfm_photo==""}selected{/}>{?sc.cfm_photo==""}감리사진촬영{:}전체{/}</option>
+						<option value="1" {?sc.cfm_photo=="예"}selected{/}>예</option>
+						<option value="2" {?sc.cfm_photo=="아니오"}selected{/}>아니오</option>
+					</select>
+				</td>
+				<td width="250">감리특이사항</td>
+				<td width="125">감리확인일</td>
+			</tr>
+			{@fumi_dummy}
+			<tr>
+				<!--<td><input class="select-check" type="checkbox" data-seq="{.seq}"></td>-->
+				<td>{.f_identify}</td>
+				<td>{.reg_name}</td>
+				<td>{.reg_company}</td>
+				<td>{.reg_date}</td>
+				<td>{.reg_x}<br>{.reg_y}</td>
+				<td>{.cvt_type}<br>{.cvt_type2}</td>
+				<td>{.cvt_x}<br>{.cvt_y}</td>
+				<td>{.standard}m</td>
+				<td>{.drug}</td>
+				<td>{.amount}개</td>
+				<td>{.fumi_report}</td>
+				<td>{.fumi_confirm}</td>
+				<td>{.fumi_photo}</td>
+				<td>{.cfm_drug}</td>
+				<td>{.cfm_fumi}</td>
+				<td>{.cfm_photo}</td>
+				<td>{.cfm_report}</td>
+				<td>{.cfm_date}</td>
+			</tr>
+			{:}
+			<tr><td colspan="18">조회된 데이터가 없습니다.</td></tr>
+			{/}
+		</table>
+		{sc.paging}
+	</div>
+</body>
+</html>
