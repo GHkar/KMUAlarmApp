@@ -80,7 +80,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
+                Intent intent = new Intent(getApplicationContext(), AvtMajor.class);
                 startActivity(intent);
                 finish();
             }

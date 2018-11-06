@@ -23,7 +23,10 @@
             android:name=".AvtKmuPage"
             android:label="@string/title_activity_avt_kmu_page"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AvtMajor"></activity>
+        <activity
+            android:name=".AvtMajor"
+            android:label="@string/title_activity_avt_major"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
