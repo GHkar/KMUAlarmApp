@@ -72,6 +72,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
             {
                 Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -81,6 +82,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
             {
                 Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -90,6 +92,17 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
             {
                 Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        findViewById(R.id.Btn_SwBuiseness).setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
+                startActivity(intent);
+                finish();
             }
         });
 
