@@ -27,7 +27,8 @@ import android.widget.Button;
 //------------------------------------------------------------------------------------------------//
 //
 //------------------------------------------------------------------------------------------------//
-public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class AvtMenu extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
 {
     //--------------------------------------------------------------------------------------------//
     //
@@ -37,7 +38,7 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avt_kmu_page);
+        setContentView(R.layout.activity_avt_menu);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,51 +64,51 @@ public class AvtMenu extends AppCompatActivity implements NavigationView.OnNavig
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        // 학교 공지 페이지로 전환.
-//         1 Button btnSchool = (Button)findViewById(R.id.Btn_School);
-
-        findViewById(R.id.Btn_School).setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        findViewById(R.id.Btn_Major).setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(getApplicationContext(), AvtMajor.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        findViewById(R.id.Btn_Home).setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        findViewById(R.id.Btn_SwBuiseness).setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(getApplicationContext(), AvtKmuPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
+        initControl();
 
     }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+    protected void initControl()
+    {
+        findViewById(R.id.btnMajor).setOnClickListener(this);
+        findViewById(R.id.btnHome).setOnClickListener(this);
+        findViewById(R.id.btnSchool).setOnClickListener(this);
+    }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+    @Override
+    public void onClick(View view)
+    {
+        switch(view.getId()) // view가 부모클래스 -> button -> getId -> 버튼 Id를 가지고 올 수 있어.
+        {
+            case R.id.btnMajor:
+            {
+                Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            case R.id.btnHome:
+            {
+                Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            case R.id.btnSchool:
+            {
+                Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+
+        }
+    }
+
     //--------------------------------------------------------------------------------------------//
     //
     //--------------------------------------------------------------------------------------------//

@@ -70,7 +70,7 @@ public class AvtMajor extends AppCompatActivity
     @Override
     public void onClick(View view)
     {
-        switch(view.getId())
+        switch(view.getId()) // view가 부모클래스 -> button -> getId -> 버튼 Id를 가지고 올 수 있어.
         {
             case R.id.btnMajor:
             {
