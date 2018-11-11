@@ -21,8 +21,12 @@ $txt=$snoopy->results;
 // $rex = "/\<a href=\"(.*)\"\<\/a>/";
 // foreach($var as $arr < 25 )
 // {
-    $rex="/\<td class=\"writer+\"\>(.*)\<\/td\>/";
+    $rex="/\<td class=\"num first+\"\>(.*)\<\/td\>/"; // 정규식 다시 확인.
+    // $rex="/\<td class=\"writer+\"\>(.*)\<\/td\>/";
+    // $rex1 = "/\<td class=\"date+\"\>(.*)\<\/td\>/";
+
     preg_match_all($rex,$txt,$o);
+    // preg_match_all($rex1,$txt,$o);
     print_r($o[0][0]);
 // }
 
