@@ -28,7 +28,8 @@ import android.widget.Button;
 //
 //------------------------------------------------------------------------------------------------//
 public class AvtMenu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
+        implements NavigationView.OnNavigationItemSelectedListener
+        , View.OnClickListener
 {
     //--------------------------------------------------------------------------------------------//
     //
@@ -75,6 +76,9 @@ public class AvtMenu extends AppCompatActivity
         findViewById(R.id.btnMajor).setOnClickListener(this);
         findViewById(R.id.btnHome).setOnClickListener(this);
         findViewById(R.id.btnSchool).setOnClickListener(this);
+//        findViewById(R.id.btnMajor).setOnClickListener(listener -> onClickBtnMajor());
+//        findViewById(R.id.btnHome).setOnClickListener(listener -> onClickBtnHome());
+//        findViewById(R.id.btnSchool).setOnClickListener(listener -> onClickBtnSchool());
     }
     //--------------------------------------------------------------------------------------------//
     //
@@ -108,7 +112,33 @@ public class AvtMenu extends AppCompatActivity
 
         }
     }
-
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+//    private void onClickBtnMajor()
+//    {
+//        Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+//        startActivity(intent);
+//        finish();
+//    }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+//    private void onClickBtnHome()
+//    {
+//        Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+//        startActivity(intent);
+//        finish();
+//    }
+    //--------------------------------------------------------------------------------------------//
+    //
+    //--------------------------------------------------------------------------------------------//
+//    private void onClickBtnSchool()
+//    {
+//        Intent intent = new Intent(AvtMenu.this, AvtMenu.class);
+//        startActivity(intent);
+//        finish();
+//    }
     //--------------------------------------------------------------------------------------------//
     //
     //--------------------------------------------------------------------------------------------//
