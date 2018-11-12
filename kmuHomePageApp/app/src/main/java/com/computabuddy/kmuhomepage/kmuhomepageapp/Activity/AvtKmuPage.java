@@ -5,7 +5,7 @@
 //
 // Copyright(c) computabuddy. All rights reserved.
 //------------------------------------------------------------------------------------------------//
-package com.computabuddy.kmuhomepage.kmuhomepageapp;
+package com.computabuddy.kmuhomepage.kmuhomepageapp.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +21,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import com.computabuddy.kmuhomepage.kmuhomepageapp.R;
 
 public class AvtKmuPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

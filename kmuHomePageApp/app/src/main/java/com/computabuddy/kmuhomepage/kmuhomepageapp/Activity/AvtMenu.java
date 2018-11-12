@@ -5,7 +5,7 @@
 //
 // Copyright(c) computabuddy. All rights reserved.
 //------------------------------------------------------------------------------------------------//
-package com.computabuddy.kmuhomepage.kmuhomepageapp;
+package com.computabuddy.kmuhomepage.kmuhomepageapp.Activity;
 //------------------------------------------------------------------------------------------------//
 //
 //------------------------------------------------------------------------------------------------//
@@ -23,6 +23,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import com.computabuddy.kmuhomepage.kmuhomepageapp.R;
 
 //------------------------------------------------------------------------------------------------//
 //
