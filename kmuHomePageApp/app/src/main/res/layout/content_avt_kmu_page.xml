@@ -16,16 +16,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:orientation="vertical">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
@@ -53,20 +43,19 @@
             android:layout_weight="1"
             android:text="사업단" />
 
+        <Button
+            android:id="@+id/Btn_Major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="학과" />
 
-        <!--<Button-->
-            <!--android:id="@+id/Btn_Major"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="학과" />-->
-
-        <!--<Button-->
-            <!--android:id="@+id/Btn_Schedule"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="스케쥴" />-->
+        <Button
+            android:id="@+id/Btn_Schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="스케쥴" />
     </LinearLayout>
 
 </RelativeLayout>
