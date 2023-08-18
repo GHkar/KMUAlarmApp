@@ -9,4 +9,5 @@
     <string name="title_activity_avt_kmu_page">AvtKmuPage</string>
     <string name="title_activity_avt_temp">Avt_Temp</string>
     <string name="title_activity_avt_major">AvtMajor</string>
+    <string name="title_activity_avt_swbusiness">AvtSWBusiness</string>
 </resources>

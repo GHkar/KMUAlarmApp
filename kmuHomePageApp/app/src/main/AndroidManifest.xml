@@ -26,6 +26,10 @@
         <activity
             android:name=".AvtMajor"
             android:label="@string/title_activity_avt_major"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AvtSWBusiness"
+            android:label="@string/title_activity_avt_swbusiness"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

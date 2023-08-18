@@ -29,7 +29,7 @@
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/사업단" />
+            android:entries="@array/학교" />
     </LinearLayout>
 
     <include layout="@layout/content_avt_kmu_page" />

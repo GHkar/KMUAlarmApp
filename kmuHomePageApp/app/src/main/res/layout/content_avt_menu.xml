@@ -97,25 +97,11 @@
                 android:text="학교" />
 
             <Button
-                android:id="@+id/btnBusiness"
+                android:id="@+id/btnSWBusiness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="사업단" />
-
-            <Button
-                android:id="@+id/btnMajor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="전공" />
-
-            <Button
-                android:id="@+id/btnScehdule"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="일정" />
 
         </LinearLayout>
     </RelativeLayout>
